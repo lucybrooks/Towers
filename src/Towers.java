@@ -31,7 +31,18 @@ public class Towers {
 	 * @param endPole - pole the discs end on (zero based)
 	 */
 	public static void solveTowers(int numDiscs, int startPole, int endPole) {
-
+ int interm = 3-endPole-startPole;
+   if(numDiscs==0)
+   {
+     System.out.print(" ");
+   }
+   else
+   {
+     solveTowers(numDiscs-1, startPole, interm);
+     moveDisc(startPole, endPole);
+     solveTowers(numDiscs-1, interm, endPole);
+   }
+ }
 	}
 	
 	/**
